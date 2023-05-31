@@ -1,10 +1,27 @@
 import colors from 'vuetify/es5/util/colors'
-
+//const isDev = process.env.NODE_ENV === 'development'
+const useEmulators = false
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  // mode:'spa',
+  manifest: {
+    name: 'Smileweekly',
+    lang: 'en',
+    orientation: 'portrait',
+    background_color: '#FFFFFF',
+    theme_color: '#F8F8F8',
+    theme_color: '#F8F8F8',
+    icons: [
+      {
+        src: '/img/logo.png',
+        sizes: '196x196',
+        type: 'image/png',
+        purpose: 'any maskable'
+      }
+    ]
+  },
   head: {
-    titleTemplate: '%s - smileweeklyapp',
-    title: 'smileweeklyapp',
+    title: 'Smileweekly',
     htmlAttrs: {
       lang: 'en'
     },
@@ -25,26 +42,146 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/firebase.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
+  router: {
+    middleware: ['auth']
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'access_token',
+          global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: false,
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/login', method: 'post' },
+          register: { url: '/register', method: 'post' },
+          logout: false,
+          user: { url: '/profile', method: 'get' }
+        }
+      }
+    },
+    redirects: {
+      login: '/',
+      register: '/',
+      logout: '/',
+      home: '/dashboard'
+
+    }
+  },
+  firebase: {
+    lazy: false,
+    config: {
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      projectId: process.env.PROJECT_ID,
+      storageBucket: process.env.STORAGE_BUCKET,
+      messagingSenderId: process.env.MESSAGING_SENDER_ID,
+      appId: process.env.APP_ID,
+      measurementId: process.env.MEASUREMENT_ID
+    },
+    onFirebaseHosting: false,
+    terminateDatabasesAfterGenerate: true,
+    services: {
+      auth: {
+        initialize: {
+          onAuthStateChangedAction: 'onAuthStateChanged',
+        },
+        ssr: true,
+        // emulatorPort: isDev && useEmulators ? 9099 : undefined,
+        disableEmulatorWarnings: false,
+      },
+      firestore: {
+        memoryOnly: false,
+        enablePersistence: true,
+        // emulatorPort: isDev && useEmulators ? 8080 : undefined,
+      },
+      functions: {
+        //emulatorPort: isDev && useEmulators ? 12345 : undefined,
+      },
+      storage: {
+        // emulatorPort: isDev && useEmulators ? 9199 : undefined,
+        emulatorHost: 'localhost',
+      },
+      database: {
+        // emulatorPort: isDev && useEmulators ? 9000 : undefined,
+      },
+      performance: true,
+      analytics: true,
+      remoteConfig: {
+        settings: {
+          fetchTimeoutMillis: 60000,
+          minimumFetchIntervalMillis: 43200000,
+        },
+        defaultConfig: {
+          welcome_message: 'Welcome',
+        },
+      },
+      // breaks the app with 'app.$fire.firestore.collection is not a function':
+      appCheck: true,
+
+    },
+  },
+
+
+
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // '@nuxtjs/axios',
+    // '@nuxtjs/auth',
+    '@nuxtjs/proxy',
+    'bootstrap-vue/nuxt',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: process.env.API_KEY,
+          authDomain: process.env.AUTH_DOMAIN,
+          projectId: process.env.PROJECT_ID,
+          storageBucket: process.env.STORAGE_BUCKET,
+          messagingSenderId: process.env.MESSAGING_SENDER_ID,
+          appId: process.env.APP_ID,
+          measurementId: process.env.MEASUREMENT_ID
+        },
+        services: {
+          auth: {
+            persistence: 'local', // default
+            initialize: {
+              onAuthStateChangedAction: 'onAuthStateChangedAction',
+              subscribeManually: false
+            },
+            ssr: false, // default,
+          }
+        }
+      }
+    ]
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

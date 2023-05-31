@@ -9,11 +9,22 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/firebase": "^8.2.2",
+    "@nuxtjs/pwa": "^3.3.5",
+    "bootstrap": "^5.3.0",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.25.3",
+    "d3": "^7.8.4",
+    "firebase": "^9.22.1",
     "nuxt": "^2.15.8",
+    "nuxt-video-player": "^1.0.17",
+    "pesepay": "^1.0.3",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
+    "vue-uuid": "^3.0.0",
     "vuetify": "^2.6.10"
   },
   "devDependencies": {
