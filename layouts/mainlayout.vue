@@ -9,13 +9,13 @@
                 <v-btn text x-large to="/books">
                     PLAY GAME
                 </v-btn>
-                <v-btn text x-large to="/register">
+                <v-btn text x-large to="/smileweeklymedia">
                     MEDIA
                 </v-btn>
-                <v-btn text x-large to="/register">
+                <v-btn text x-large to="/smileweeklynews">
                     NEWS
                 </v-btn>
-                <v-btn text x-large class="mr-2" to="/login">
+                <v-btn text x-large class="mr-2" to="/paybills">
                     PAY BILLS
                 </v-btn>
 

@@ -5,16 +5,7 @@
             <v-card>
                 <v-card-text class="d-flex">
                     <v-btn text to="/">Dashboard</v-btn>
-                     <v-btn text disabled>Dashboard Overview  {{displayFullname}}</v-btn> <v-spacer/>
-
-                     <v-row>
-                       <v-col>
-                         <v-btn depressed color="success" text to="/madyozw">Madyozw Shop</v-btn>
-                       </v-col>
-                       <v-col>
-                         <v-btn depressed color="deep-orange" text to="/madyozwmedia">Madyozw Media</v-btn>
-                       </v-col>
-                     </v-row>
+                     <v-btn text disabled>Dashboard Overview</v-btn> <v-spacer/>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -33,9 +24,9 @@
                       </v-btn>
                     </div>
                     <v-list-item-title class="headline mb-1 white--text">
-                      $8520.50
+                      234
                     </v-list-item-title>
-                    <v-list-item-subtitle class="white--text">Wallet</v-list-item-subtitle>
+                    <v-list-item-subtitle class="white--text">Leaderboard</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
               </v-col>
@@ -61,9 +52,9 @@
                       </v-btn>
                     </div>
                     <v-list-item-title class="headline mb-1 white--text">
-                     233
+                     90
                     </v-list-item-title>
-                    <v-list-item-subtitle class="white--text">Users</v-list-item-subtitle>
+                    <v-list-item-subtitle class="white--text">Recent Winners</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
               </v-col>
