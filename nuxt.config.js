@@ -155,13 +155,13 @@ export default {
       '@nuxtjs/firebase',
       {
         config: {
-          apiKey: process.env.API_KEY,
-          authDomain: process.env.AUTH_DOMAIN,
-          projectId: process.env.PROJECT_ID,
-          storageBucket: process.env.STORAGE_BUCKET,
-          messagingSenderId: process.env.MESSAGING_SENDER_ID,
-          appId: process.env.APP_ID,
-          measurementId: process.env.MEASUREMENT_ID
+          apiKey: "AIzaSyDgKraaNeGgKKSg9EMA1Mwcl0sOzI--XvQ",
+          authDomain: "projectx-ussd-game.firebaseapp.com",
+          projectId: "projectx-ussd-game",
+          storageBucket: "projectx-ussd-game.appspot.com",
+          messagingSenderId: "971406964195",
+          appId: "1:971406964195:web:6c9636dd09bd4642875cd6",
+          measurementId: "G-52C1Z9ZK8L"
         },
         services: {
           auth: {

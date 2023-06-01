@@ -7,9 +7,9 @@ if (!firebase.apps.length) {
         projectId: "projectx-ussd-game",
         storageBucket: "projectx-ussd-game.appspot.com",
         messagingSenderId: "971406964195",
-        appId: "1:971406964195:web:6c9636dd09bd4642875cd6",
-        measurementId: "G-52C1Z9ZK8L",
-        databaseURL: "https://projectx-ussd-game.firebaseio.com",
+        appId: "1:971406964195:web:81d1eaade7bc3727875cd6",
+        measurementId: "G-W4WTTLJ0C9"
+        //databaseURL: "https://projectx-ussd-game.firebaseio.com",
     }
     firebase.initializeApp(config)
     firebase.firestore().settings({timestampsInSnapshots: true,merge: true,})
