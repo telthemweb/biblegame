@@ -15,11 +15,61 @@
                 <v-btn text x-large to="/smileweeklynews">
                     NEWS
                 </v-btn>
-                <v-btn text x-large class="mr-2" to="/paybills">
-                    PAY BILLS
-                </v-btn>
+                <!-- <v-btn text x-large class="mr-2" to="/paybills">
+                    
+                </v-btn> -->
+                
 
             </div>
+            <v-menu offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn text color="black" dark v-bind="attrs" v-on="on">
+                        PAY BILLS
+                    </v-btn>
+                </template>
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-action>
+                            <v-icon>mdi-phone</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>BUY AIRTIME</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-action>
+                            <v-icon>mdi-electric-switch</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>PAY ZESA</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-action>
+                            <v-icon>mdi-contactless-payment-circle</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>PAY ZOL</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-action>
+                            <v-icon>mdi-contactless-payment-circle</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>PAY TELONE</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-action>
+                            <v-icon>mdi-account-school</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>PAY FEES</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
             <v-menu offset-y>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn text color="primary" dark v-bind="attrs" v-on="on">
