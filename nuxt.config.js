@@ -5,6 +5,9 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   // mode:'spa',
   target: 'static',
+  generate: {
+    dir: 'dist'
+  },
   manifest: {
     name: 'Smileweekly',
     lang: 'en',
@@ -91,13 +94,14 @@ export default {
   firebase: {
     lazy: false,
     config: {
-      apiKey: process.env.API_KEY,
-      authDomain: process.env.AUTH_DOMAIN,
-      projectId: process.env.PROJECT_ID,
-      storageBucket: process.env.STORAGE_BUCKET,
-      messagingSenderId: process.env.MESSAGING_SENDER_ID,
-      appId: process.env.APP_ID,
-      measurementId: process.env.MEASUREMENT_ID
+      apiKey: "AIzaSyDgKraaNeGgKKSg9EMA1Mwcl0sOzI--XvQ",
+        authDomain: "projectx-ussd-game.firebaseapp.com",
+        projectId: "projectx-ussd-game",
+        storageBucket: "projectx-ussd-game.appspot.com",
+        messagingSenderId: "971406964195",
+        appId: "1:971406964195:web:81d1eaade7bc3727875cd6",
+        measurementId: "G-W4WTTLJ0C9",
+        databaseURL: "https://projectx-ussd-game-default-rtdb.firebaseio.com",
     },
     onFirebaseHosting: false,
     terminateDatabasesAfterGenerate: true,
