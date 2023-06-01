@@ -4,6 +4,7 @@ const useEmulators = false
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   // mode:'spa',
+  target: 'static',
   manifest: {
     name: 'Smileweekly',
     lang: 'en',
